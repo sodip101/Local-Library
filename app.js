@@ -1,21 +1,21 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//Importing Routes
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
 const catalogRouter=require('./routes/catalog');//Imported routes for "catalog" area of site
 
-var app = express();
+let app = express();
+
 //Connecting to database:
 const mongoose= require('mongoose');
-//connection setup
-var dev_db_url = 'mongodb+srv://pidos:sodips101@cluster0-rfghy.gcp.mongodb.net/test?retryWrites=true&w=majority'
-var mongoDB = process.env.MONGODB_URI || dev_db_url;
+let dev_db_url = 'mongodb+srv://user:password101@cluster0-rfghy.gcp.mongodb.net/test?retryWrites=true&w=majority'
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB,{useNewUrlParser:true, useUnifiedTopology: true, useCreateIndex: true});
-
 const db=mongoose.connection;
 db.on('error',console.error.bind(console,'MongoDB connection error'));
 

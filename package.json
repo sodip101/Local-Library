@@ -1,0 +1,30 @@
+{
+  "name": "locallibrary",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "12.16.1"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=locallibrary:* npm run devstart",
+    "my-demo-script": "echo 'This is run by a custom script'",
+    "my-demo-script-2": "npm run my-demo-script && echo 'Scripts are so cool.'"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-validator": "^6.5.0",
+    "http-errors": "~1.6.3",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.4",
+    "morgan": "~1.9.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
